@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>FoodJunkies</title>
+
+  <!-- Bootstrap CSS CDN  -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <!-- Style to fix the issue of text extending past card length -->
+  <style>
+    .card-body a {
+      word-break: break-all;
+    }√
+
+    .articleHeadline {
+      line-height: 1.5;
+    }
+
+    body {
+      background-image: url('https://i.pinimg.com/originals/49/79/41/4979418cc7cc1d8fe3932a6a84fe987a.png');
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/6856be086f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Main Bootstrap Search -->
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Food Junkie</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="about-page.html">Junksters</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Jumbotron for Title -->
+    <section class="jumbotron" style="background-color: #d81818de; color: rgb(233, 178, 59);">
+      <h1 class="text-center">
+        <strong>
+          <i class="fa fa-cutlery" aria-hidden="true"></i> FoodJunkies </strong>
+      </h1>
+    </section>
+
+    <div class="card" style="background-color:blanchedalmond;">
+      <section class="card-header">
+        <strong> <i class="fas fa-hamburger" id="instructions"></i> JUNK RULES TO FOLLOW:</strong>
+      </section>
+      <section class="card-body">
+        <ul>
+          <li> Welcome Junkies! Junk tips to follow to guarantee full satisfactory use of the app are as follows
+            below! </li>
+          <li> Within the search bar, enter the desired cuisine craving (ex: Italian, Korean BBQ, Chinese, Mexican...)
+          </li>
+          <li> From there, you are able to select the amount of results you would like to see on the page. </li>
+          <li> The top results of whatever you are craving will be displayed in the TOP JUNK section. </li>
+          <li> If you need to clear your search you are able to do so by smashing the clear button and <br> then you
+            can proceed to start over.</li>
+          <li> You are able to sign up or subscribe to our listing for any deals and promotions that way be offered.
+          </li>
+        </ul>
+        <!-- Here we capture the number of records that the user wants to retrieve  -->
+        <article class="form-group"></article>
+        <!-- Row for Searching New York Times -->
+        <div class="row">
+          <div class="col-sm-12">
+            <br />
+            <!-- First card is for handling the search parameters -->
+            <div class="card" style="background-color:blanchedalmond;">
+              <article class="card-header">
+                <strong> <i class="fas fa-hamburger"></i> Search Restaurants</strong>
+              </article>
+              <div class="card-body">
+                <!-- Here we create an HTML Form for handling the inputs-->
+                <form>
+                  <!-- Here we create the text box for capturing the search term-->
+                  <div class="form-group">
+                    <label for="search-term">Yummy Search :</label>
+                    <select id="search-term" class="custom-select">
+                      <!-- options created dynamically -->
+                    </select>
+                  </div>
+                  <!-- Future development: allow users to limit number of results -->
+                  <!-- <div class="form-group">
+                    <label for="pwd">Number of Food to Eat:</label>
+                    <select id="pwd" class="custom-select">
+                      <option value="1">1</option>
+                      <option value="5" selected>5</option>
+                      <option value="10">10</option>
+                    </select>
+                  </div> -->
+                  <button type="submit" class="btn btn-default" id="run-search">
+                    <i class="fa fa-search"></i> Search
+                  </button>
+                  <button class="btn btn-default" id="clear-all">
+                    <i class="fa fa-trash"></i> Clear Junk
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- This row will handle all of the retrieved articles -->
+        <div class="row">
+          <div class="col-sm-12">
+            <br />
+            <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
+            <div class="card" style="background-color: blanchedalmond;">
+              <!-- card Heading for the retrieved articles box -->
+              <article class="card-header">
+                <strong> <i class="fas fa-pizza-slice"></i> Top Junk</strong>
+              </article>
+              <!-- This main card will hold each of the resulting articles -->
+              <ul id="article-section"></ul>
+            </div>
+          </div>
+        </div>
+        <br>
+        <form>
+          <section class="form-group">
+            <p id="sign-up"> <strong> Sign up for deals and promotions offered through our partnership with
+                establishments!</strong></p>
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </section>
+          <section class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </section>
+          <section class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </section>
+          <button type="submit" class="btn btn-primary">Receive Junk!</button>
+        </form>
+
+        <!-- Footer Region -->
+        <footer class="row">
+          <div class="col-sm-12">
+            <!-- Line Break followed by closing -->
+            <hr />
+            <h5 class="text-center" style="background-color: rgb(224, 171, 91);">
+              <small>Get your junk on!
+                <i class="fa fa-heart"></i>
+              </small>
+            </h5>
+          </div>
+        </footer>
+      </section>
+    </div>
+  </div>
+  <!-- jQuery JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- Bootstrap js (except jQuery) -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <!-- Code to the JavaScript File -->
+  <script src="foodJunkies.js"></script>
+</body>
+
+</html>
